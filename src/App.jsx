@@ -1,21 +1,15 @@
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import Login from "./components/auth/Login"
+import SignUp from "./components/auth/SignUp"
+import AuthDetails from "./components/AuthDetails"
 
 const App = () => {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/"><Login/></Route>
-          <Route path="/signup"><Signup/></Route>
-          <Route path="/home"><Home/></Route>
-        </Routes>
-      </Router>
-    </div>
+    <>
+      <Login/>
+      <SignUp/>
+      <AuthDetails/>
+    </>
   )
 }
 
-export default App;
+export default App
