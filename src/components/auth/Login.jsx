@@ -23,15 +23,25 @@ const Login = () => {
 
     return (
         <>
-            <form onSubmit={LogIn}>
-                <h1>Login to your Account</h1>
-                <input
-                className=""
-                type="email" value={email} onChange={(e) => { setEmail(e.target.value); }} placeholder="Email" />
-                <input type="password" value={password} onChange={(e) => { setPassword(e.target.value); }} placeholder="Password" />
-                <button type="submit">Submit</button>
+        <div className="bg-blue-500 text-center m-10 p-10 rounded-lg">
+            <form onSubmit={LogIn} >
+              <div className="flex flex-col items-center justify-center bg-gray-100 p-7 m-10 mt-15">
+                <h1 className="block mb-4">Login to your Account</h1>
+                <div className="block m-2 w-full max-w-xs">
+                <input className="block w-full p-2 border border-gray-300 rounded mb-2" type="email" value={email} onChange={(e) => { setEmail(e.target.value); }} placeholder="Email" />
+                <input className="block w-full p-2 border border-gray-300 rounded" type="password" value={password} onChange={(e) => { setPassword(e.target.value); }} placeholder="Password" />
+                </div>
+                <div className="block m-2">
+                        <button className="block w-full p-4 bg-blue-600 text-white hover:bg-green-500 rounded " type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
             </form>
-            <p>New User ? <button onClick={() => navigate("/signup")}>Sign Up</button></p>
+            <p className="mt-4">
+                New User? <button onClick={() => navigate("/signup")} className="text-blue-700 underline">Sign Up</button>
+            </p>
+            </div>
         </>
     );
 };
